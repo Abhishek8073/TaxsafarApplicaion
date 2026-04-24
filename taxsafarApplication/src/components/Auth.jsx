@@ -113,35 +113,18 @@ export function Auth() {
 
   return (
     <section className="px-4 py-12 sm:px-6 lg:px-8" id="auth">
-      <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-[0.9fr_1.1fr]">
-        <Reveal>
-          <div className="section-badge inline-flex rounded-full bg-teal-100 px-4 py-2 text-xs font-extrabold uppercase tracking-[0.2em] text-teal-700">
-            Login/Register
-          </div>
-          <h2 className="font-heading mt-4 text-4xl font-black tracking-[-0.05em] text-slate-900 sm:text-5xl">
-            Simple login and register validation.
-          </h2>
-          <p className="mt-4 max-w-xl text-base leading-8 text-slate-600">
-            This section demonstrates frontend validation with friendly error
-            messages, clean field states and a simple tab switch between login
-            and register.
-          </p>
-
-          <div className="interactive-card mt-6 rounded-3xl border border-slate-200/70 bg-white/80 p-5 shadow-lg shadow-slate-900/5">
-            <p className="text-sm font-semibold text-slate-900">Validation rules used</p>
-            <ul className="mt-3 space-y-2 text-sm leading-7 text-slate-600">
-              <li>Email format is checked before submit.</li>
-              <li>Password must be at least 8 characters.</li>
-              <li>Register also validates mobile number and confirm password.</li>
-              <li>Success state appears only when all fields are valid.</li>
-            </ul>
-          </div>
-        </Reveal>
-
+      <div className="mx-auto flex max-w-7xl flex-col items-center gap-6">
+        
         <Reveal
-          className="auth-shell interactive-card rounded-[2rem] border border-slate-200/70 bg-white/85 p-5 shadow-xl shadow-slate-900/5 sm:p-7"
+          className="auth-shell interactive-card w-full max-w-2xl rounded-[2rem] border border-slate-200/70 bg-white/85 p-5 shadow-xl shadow-slate-900/5 sm:p-7"
           delay={120}
         >
+          <div className="rounded-2xl border border-slate-200 bg-gradient-to-br from-teal-50 to-slate-50 p-6 mb-6 text-center">
+            <h2 className="font-heading text-4xl font-black tracking-[-0.05em] text-slate-900 sm:text-5xl">
+              {tab === 'login' ? 'Login Page' : 'Registration Page'}
+            </h2>
+          </div>
+        
           <div
             className="auth-tabs"
             style={{ '--auth-slider': tab === 'login' ? '0%' : '100%' }}

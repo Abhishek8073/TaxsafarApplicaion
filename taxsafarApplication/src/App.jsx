@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import { Auth } from './components/Auth'
-import { Contact } from './components/Contact'
+import { AuthPage } from './components/AuthPage'
+import { ContactPage } from './components/ContactPage'
 import { Footer } from './components/Footer'
 import { Hero } from './components/Hero'
 import { NavBar } from './components/NavBar'
@@ -9,8 +9,15 @@ import { Reviews } from './components/Reviews'
 import { ServicePage } from './components/ServicePage'
 import { Services } from './components/Services'
 import { Stats } from './components/Stats'
-import { WhyUs } from './components/WhyUs'
-import { contactOptions, processSteps, reviews, serviceItems, stats, whyItems } from './data'
+import { SupportPage } from './components/SupportPage'
+import {
+  contactOptions,
+  processSteps,
+  reviews,
+  serviceItems,
+  stats,
+  supportPages,
+} from './data'
 
 function getCurrentHash() {
   return window.location.hash || '#top'
@@ -25,17 +32,23 @@ function findService(hash) {
   return serviceItems.find((item) => item.slug === slug) || null
 }
 
+function findSupportPage(hash) {
+  if (!hash.startsWith('#page/')) {
+    return null
+  }
+
+  const slug = hash.replace('#page/', '')
+  return supportPages.find((item) => item.slug === slug) || null
+}
+
 function HomePage() {
   return (
     <main>
       <Hero />
       <Stats items={stats} />
       <Services items={serviceItems} />
-      <WhyUs items={whyItems} />
       <Process items={processSteps} />
       <Reviews items={reviews} />
-      <Auth />
-      <Contact items={contactOptions} />
     </main>
   )
 }
@@ -50,7 +63,11 @@ function App() {
   }, [])
 
   const selectedService = findService(hash)
+  const selectedSupportPage = findSupportPage(hash)
   const isServicePage = hash.startsWith('#service/')
+  const isSupportPage = hash.startsWith('#page/')
+  const isAuthPage = hash === '#auth'
+  const isContactPage = hash === '#contact-page'
 
   return (
     <div className="min-h-screen bg-[radial-gradient(circle_at_top_left,_rgba(255,255,255,0.95),_transparent_30%),linear-gradient(180deg,_#fcfbf7_0%,_#f4efe4_100%)] text-slate-700">
@@ -59,7 +76,17 @@ function App() {
 
       <NavBar />
 
-      {isServicePage ? <ServicePage item={selectedService} /> : <HomePage />}
+      {isServicePage ? (
+        <ServicePage item={selectedService} />
+      ) : isSupportPage ? (
+        <SupportPage page={selectedSupportPage} />
+      ) : isAuthPage ? (
+        <AuthPage />
+      ) : isContactPage ? (
+        <ContactPage />
+      ) : (
+        <HomePage />
+      )}
 
       <Footer />
     </div>

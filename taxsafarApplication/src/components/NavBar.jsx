@@ -34,12 +34,8 @@ export function NavBar() {
             <button
               className="nav-link-fancy inline-flex items-center gap-2 transition duration-300 hover:text-slate-900"
               onClick={() => setOpen((current) => !current)}
-              type="button"
-            >
+              type="button">
               Services
-              <span className={`text-xs transition duration-300 ${open ? 'rotate-180' : ''}`}>
-                ▼
-              </span>
             </button>
 
             {open ? (
@@ -65,12 +61,14 @@ export function NavBar() {
           ))}
         </nav>
 
-        <a
-          className="button-shine inline-flex min-h-12 items-center justify-center rounded-full bg-linear-to-br from-teal-700 to-slate-900 px-5 text-sm font-bold text-white shadow-lg shadow-slate-900/15 transition duration-300 hover:-translate-y-1 hover:shadow-xl"
-          href="#contact"
-        >
-          Book a Call
-        </a>
+        <div className="ml-auto flex items-center gap-3">
+          <a
+            className="button-shine inline-flex min-h-12 items-center justify-center rounded-full bg-linear-to-br from-teal-700 to-slate-900 px-5 text-sm font-bold text-white shadow-lg shadow-slate-900/15 transition duration-300 hover:-translate-y-1 hover:shadow-xl"
+            href="#contact-page"
+          >
+            Book a Call
+          </a>
+        </div>
       </div>
     </header>
   )

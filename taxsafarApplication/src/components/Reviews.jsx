@@ -11,13 +11,6 @@ export function Reviews({ items }) {
           <div className="section-badge inline-flex rounded-full bg-teal-100 px-4 py-2 text-xs font-extrabold uppercase tracking-[0.2em] text-teal-700">
             Reviews
           </div>
-          <h2 className="font-heading mt-4 text-4xl font-black tracking-[-0.05em] text-slate-900 sm:text-5xl">
-            The page now feels more credible from the first screen.
-          </h2>
-          <p className="mt-4 text-base leading-8 text-slate-600">
-            Testimonials are displayed in a cleaner format to support trust and
-            reduce hesitation before users reach the contact section.
-          </p>
         </Reveal>
 
         <div className="mt-10 grid gap-5 lg:grid-cols-3">

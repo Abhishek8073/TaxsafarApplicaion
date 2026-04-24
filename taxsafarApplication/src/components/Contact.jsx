@@ -46,36 +46,25 @@ export function Contact({ items }) {
         </div>
       ) : null}
 
-      <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-[0.9fr_1.1fr]">
-        <Reveal>
-          <div className="inline-flex rounded-full bg-teal-100 px-4 py-2 text-xs font-extrabold uppercase tracking-[0.2em] text-teal-700">
-            Contact
-          </div>
-          <h2 className="font-heading mt-4 text-4xl font-black tracking-[-0.05em] text-slate-900 sm:text-5xl">
-            Friendly lead capture with less friction.
-          </h2>
-          <p className="mt-4 max-w-xl text-base leading-8 text-slate-600">
-            The form is shorter, cleaner and easier to complete, which helps the
-            website convert better across phones, tablets and desktop screens.
-          </p>
+      <div className="mx-auto flex max-w-7xl flex-col items-center gap-6">
+        <Reveal className="w-full text-center">
 
-          <div className="mt-7 flex flex-wrap gap-4">
-            <div className="contact-note min-w-52 rounded-3xl border border-slate-200/70 bg-white/85 px-5 py-4 shadow-lg shadow-slate-900/5">
-              <strong className="block text-sm font-bold text-slate-900">Email</strong>
-              <span className="mt-1 block text-sm text-slate-600">support@taxsafar.com</span>
-            </div>
-            <div className="contact-note min-w-52 rounded-3xl border border-slate-200/70 bg-white/85 px-5 py-4 shadow-lg shadow-slate-900/5">
-              <strong className="block text-sm font-bold text-slate-900">Phone</strong>
-              <span className="mt-1 block text-sm text-slate-600">+91 97848 18899</span>
-            </div>
-          </div>
+          <h2 className="font-heading mt-4 text-4xl font-black tracking-[-0.05em] text-slate-900 sm:text-5xl">
+            Have questions or need assistance.
+          </h2>
+          <p className="mt-4 mx-auto max-w-xl text-base leading-8 text-slate-600">
+            Have questions or need assistance? Our team is here to help. Reach out to us anytime and we’ll get back to you as soon as possible with the support you need.
+          </p>
         </Reveal>
 
         <Reveal
           as="form"
-          className="contact-shell grid gap-4 rounded-[2rem] border border-slate-200/70 bg-white/85 p-5 shadow-xl shadow-slate-900/5 transition duration-300 hover:-translate-y-1 hover:shadow-2xl sm:grid-cols-2 sm:p-7"
+          className="contact-shell w-full max-w-2xl grid gap-4 rounded-[2rem] border border-slate-200/70 bg-white/85 p-5 shadow-xl shadow-slate-900/5 transition duration-300 hover:-translate-y-1 hover:shadow-2xl sm:grid-cols-2 sm:p-7"
           onSubmit={handleSubmit}
         >
+          <h2 className="font-heading text-4xl font-black tracking-widest text-slate-900 sm:text-4xl text-center sm:col-span-2 mb-4">
+              Enter your details
+          </h2>
           <label className="block text-sm font-semibold text-slate-900">
             Name
             <input

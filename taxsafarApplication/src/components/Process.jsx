@@ -9,11 +9,10 @@ export function Process({ items }) {
             Process
           </div>
           <h2 className="font-heading mt-4 text-4xl font-black tracking-[-0.05em] text-slate-900 sm:text-5xl">
-            Simple steps that are easy to explain in an interview.
+            Simple steps to start your businesses.
           </h2>
           <p className="mt-4 text-base leading-8 text-slate-600">
-            Each step is placed in a clean sequence so the journey from interest
-            to enquiry feels smooth on desktop and mobile.
+           Starting your business doesn’t have to be complicated. We’ve designed a clear and guided process to make your journey smooth, transparent, and stress-free from start to finish.
           </p>
         </Reveal>
 

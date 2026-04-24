@@ -68,7 +68,7 @@ export function Hero() {
           <div className="mt-8 flex flex-wrap gap-4 animate-[heroFade_1300ms_cubic-bezier(0.22,1,0.36,1)]">
             <a
               className="button-shine inline-flex min-h-12 items-center justify-center rounded-full bg-linear-to-br from-teal-700 to-slate-900 px-6 text-sm font-bold text-white shadow-lg shadow-slate-900/15 transition duration-300 hover:-translate-y-1 hover:shadow-xl"
-              href="#contact"
+              href="#contact-page"
             >
               Request Callback
             </a>
