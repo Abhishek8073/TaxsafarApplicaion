@@ -1,7 +1,9 @@
 import { useRef } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Reveal } from './Reveal'
 
 export function Hero() {
+  const navigate = useNavigate()
   const heroRef = useRef(null)
   const cardRef = useRef(null)
   const textRef = useRef(null)
@@ -66,12 +68,12 @@ export function Hero() {
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4 animate-[heroFade_1300ms_cubic-bezier(0.22,1,0.36,1)]">
-            <a
+            <button
               className="button-shine inline-flex min-h-12 items-center justify-center rounded-full bg-linear-to-br from-teal-700 to-slate-900 px-6 text-sm font-bold text-white shadow-lg shadow-slate-900/15 transition duration-300 hover:-translate-y-1 hover:shadow-xl"
-              href="#contact-page"
+              onClick={() => navigate('/contact')}
             >
               Request Callback
-            </a>
+            </button>
             <a
               className="inline-flex min-h-12 items-center justify-center rounded-full border border-slate-200 bg-white/70 px-6 text-sm font-bold text-slate-900 transition duration-300 hover:-translate-y-1 hover:border-teal-200 hover:bg-white hover:text-teal-800"
               href="#services"
