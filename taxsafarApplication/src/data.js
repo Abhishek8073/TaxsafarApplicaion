@@ -1,7 +1,7 @@
 export const navItems = [
-  { label: 'Process', href: '#process' },
-  { label: 'Reviews', href: '#reviews' },
-  { label: 'Login', href: '#auth' },
+  { label: 'Process', href: '/#process' },
+  { label: 'Reviews', href: '/#reviews' },
+  { label: 'Login', href: '/auth' },
 ]
 
 export const stats = [

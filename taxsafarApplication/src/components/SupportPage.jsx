@@ -1,6 +1,10 @@
+import { useParams, Link } from 'react-router-dom'
 import { Reveal } from './Reveal'
 
-export function SupportPage({ page }) {
+export function SupportPage({ supportPages }) {
+  const { slug } = useParams()
+  const page = supportPages.find((p) => p.slug === slug)
+
   if (!page) {
     return (
       <section className="px-4 py-16 sm:px-6 lg:px-8">
@@ -11,12 +15,12 @@ export function SupportPage({ page }) {
           <p className="mt-4 text-base leading-8 text-slate-600">
             The page you selected is not available right now.
           </p>
-          <a
+          <Link
             className="mt-6 inline-flex min-h-12 items-center justify-center rounded-full bg-linear-to-br from-teal-700 to-slate-900 px-6 text-sm font-bold text-white shadow-lg shadow-slate-900/15 transition hover:-translate-y-0.5"
-            href="#top"
+            to="/"
           >
             Back to Home
-          </a>
+          </Link>
         </div>
       </section>
     )
@@ -25,11 +29,11 @@ export function SupportPage({ page }) {
   return (
     <section className="px-4 py-14 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
-        <a className="text-sm font-bold text-teal-700 transition hover:text-slate-900" href="#top">
+        <Link className="text-sm font-bold text-teal-700 transition hover:text-slate-900" to="/">
           Back to Home
-        </a>
+        </Link>
 
-        <div className="mt-5 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+        <div className="mt-5">
           <Reveal className="rounded-[2rem] border border-slate-200/70 bg-white/90 p-8 shadow-xl shadow-slate-900/5">
             <div className="section-badge inline-flex rounded-full bg-teal-100 px-4 py-2 text-xs font-extrabold uppercase tracking-[0.2em] text-teal-700">
               {page.label}
@@ -60,40 +64,6 @@ export function SupportPage({ page }) {
                   ) : null}
                 </div>
               ))}
-            </div>
-          </Reveal>
-
-          <Reveal
-            className="rounded-[2rem] bg-linear-to-br from-teal-700 to-slate-950 p-8 text-cyan-50 shadow-2xl shadow-slate-900/20"
-            delay={120}
-          >
-            <h2 className="font-heading text-2xl font-black">Quick Summary</h2>
-            <p className="mt-4 text-sm leading-7 text-cyan-50/80">
-              This page is recreated locally using the content from the official
-              TaxSafar page so users can read it directly inside the redesigned app.
-            </p>
-
-            <div className="mt-6 rounded-3xl bg-white/10 p-5">
-              <strong className="block text-lg font-extrabold">Source</strong>
-              <a
-                className="mt-2 inline-flex text-sm font-semibold text-cyan-100 underline underline-offset-4"
-                href={page.sourceUrl}
-                rel="noreferrer"
-                target="_blank"
-              >
-                Open original page
-              </a>
-            </div>
-
-            <div className="mt-5 rounded-3xl bg-white/10 p-5">
-              <strong className="block text-lg font-extrabold">Contact</strong>
-              <div className="mt-3 space-y-2">
-                {page.contact.map((item) => (
-                  <p className="text-sm text-cyan-50/80" key={item}>
-                    {item}
-                  </p>
-                ))}
-              </div>
             </div>
           </Reveal>
         </div>

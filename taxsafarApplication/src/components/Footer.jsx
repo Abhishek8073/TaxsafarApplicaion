@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 export function Footer() {
   return (
     <footer className="px-4 pb-8 pt-4 sm:px-6 lg:px-8">
@@ -9,18 +11,18 @@ export function Footer() {
           </p>
         </div>
         <div className="flex flex-wrap items-center justify-center gap-4 text-sm font-semibold text-slate-600">
-          <a className="transition hover:text-teal-700" href="#page/terms-of-use">
+          <Link className="transition hover:text-teal-700" to="/page/terms-of-use">
             Terms of Use
-          </a>
-          <a className="transition hover:text-teal-700" href="#page/privacy-policy">
+          </Link>
+          <Link className="transition hover:text-teal-700" to="/page/privacy-policy">
             Privacy Policy
-          </a>
-          <a className="transition hover:text-teal-700" href="#page/payment-policy">
+          </Link>
+          <Link className="transition hover:text-teal-700" to="/page/payment-policy">
             Payment Policy
-          </a>
-          <a className="transition hover:text-teal-700" href="#page/help-center">
+          </Link>
+          <Link className="transition hover:text-teal-700" to="/page/help-center">
             Help Center
-          </a>
+          </Link>
           <p>Email:<a className="transition hover:text-teal-700" href="mailto:support@taxsafar.com">
             support@taxsafar.com
           </a></p>

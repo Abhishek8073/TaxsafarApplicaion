@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { Reveal } from './Reveal'
 
 export function Services({ items }) {
@@ -30,12 +31,12 @@ export function Services({ items }) {
               </div>
               <h3 className="font-heading mt-4 text-xl font-extrabold text-slate-900">{item.title}</h3>
               <p className="mt-3 text-sm leading-7 text-slate-600">{item.text}</p>
-              <a
+              <Link
                 className="mt-5 inline-flex text-sm font-bold text-teal-700 transition duration-300 group-hover:translate-x-1 group-hover:text-teal-800"
-                href={`#service/${item.slug}`}
+                to={`/service/${item.slug}`}
               >
                 View service
-              </a>
+              </Link>
             </Reveal>
           ))}
         </div>

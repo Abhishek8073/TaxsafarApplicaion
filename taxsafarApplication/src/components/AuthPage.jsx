@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { Auth } from './Auth'
 import { Reveal } from './Reveal'
 
@@ -6,12 +7,12 @@ export function AuthPage() {
     <main className="py-8">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mb-8">
         <Reveal>
-          <a
-            href="#top"
+          <Link
+            to="/"
             className="inline-flex items-center gap-2 text-sm font-semibold text-teal-700 transition duration-300 hover:text-teal-800 mb-6"
           >
             ← Back to Home
-          </a>
+          </Link>
         </Reveal>
       </div>
       <Auth />
